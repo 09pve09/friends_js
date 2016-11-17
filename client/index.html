@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- DONT FORGET TO ADD YOUR ANGULAR APP! -->
+<html ng-app = 'app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Awesome Friends</title>
+    <!-- Angular from bower_components, otherwise find the CDN -->
+    <script src="angular/angular.js" charset="utf-8"></script>
+    <script src="angular-route/angular-route.js" charset="utf-8"></script>
+    <!-- End Bower Components -->
+    <script src="assets/app.js" charset="utf-8"></script>
+    <script src="assets/friendsFactory.js" charset="utf-8"></script>
+    <script src="assets/newController.js" charset="utf-8"></script>
+    <script src="assets/editController.js" charset="utf-8"></script>
+    <script src="assets/showoneController.js" charset="utf-8"></script>
+    <style>
+      td{
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      input.ng-touched.ng-invalid {
+        background-color: pink;
+      }
+
+      span{
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Links to your new and edit pages here.  Review Angular Partials if you've forgotten ) -->
+    <a href="#/">MAIN</a>
+    <a href="#/new">NEW</a>
+    <div ng-view>
+    <!-- not so subtle hint: ng-view ??? -->
+    </div>
+  </body>
+</html>

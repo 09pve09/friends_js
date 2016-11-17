@@ -1,0 +1,15 @@
+<div ng-controller = "newController">
+  <h1>Add a new Friend</h1>
+  <hr><br><br>
+  <form ng-submit="addFriend()" name="myForm">
+    First<input type="text" ng-model = 'newFriend.first' name="first" ng-minlength="3" required>
+      <span ng-show="myForm.first.$touched && myForm.first.$invalid">Minimum name length is 3!</span>
+    Last<input type="text" ng-model = 'newFriend.last' name="last" ng-minlength="2" required>
+      <span ng-show="myForm.last.$touched && myForm.last.$invalid">Minimum lastname length is 2!</span>
+    BIRTHDAY<input type="date" ng-model = 'newFriend.birthday' name="birthday" min="{{minDate | date:'yyyy-MM-dd'}}"  max="{{maxDate | date:'yyyy-MM-dd'}}" required>
+      <span ng-show="myForm.birthday.$touched && myForm.birthday.$invalid">Birthday date is invalid!</span>
+    <input type="submit" value="ADD FRIEND">
+  </form>
+
+  <hr><br><br>
+</div>

@@ -1,0 +1,20 @@
+<div ng-controller = "newController">
+  <h1>FRIENDS</h1>
+  Search by birthday: <input type="text" ng-model="by_bd">
+  <table>
+    <tr>
+      <td><h3>Name</h3></td>
+      <td><h3>Birthday</h3></td>
+      <td><h3>Show</h3></td>
+      <td><h3>Update</h3></td>
+      <td><h3>Delete</h3></td>
+    </tr>
+    <tr ng-repeat="friend in friends.friends | filter: {birthday: by_bd}">
+      <td><h4>{{friend.first}} {{friend.last}}</h4></td>
+      <td><h4>{{friend.birthday}}</h4></td>
+      <td><a  ng-href="#/show/{{friend._id}}">Show</a></td>
+      <td><a  ng-href="#/edit/{{friend._id}}">Update</a></td>
+      <td><button ng-click='removeFriend(friend)'>Delete</button></td>
+    </tr>
+  </table>
+</div>
